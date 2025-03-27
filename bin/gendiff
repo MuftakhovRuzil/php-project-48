@@ -11,8 +11,9 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
+use function GETDIFF\PARSER\parsingFile;  
+
 $doc = <<<DOC
-Generate diff
 
 Usage:
   gendiff (-h|--help)
@@ -22,10 +23,15 @@ Usage:
 Options:
   -h --help                     Show this screen
   -v --version                  Show version
+  --format <fmt>                Report format [default: stylish]
 
 DOC;
 
-//require('path/to/src/docopt.php');
-$args = Docopt::handle($doc, array('version'=>'Generate diff'));
-foreach ($args as $k=>$v)
-    echo $k.': '.json_encode($v).PHP_EOL;
+$args = Docopt::handle($doc, array('version'=>'1.0.0rc2'));
+
+$format = $args['--format'];
+$firstFilePath = $args['<firstFile>'];
+$secondFilePath = $args['<secondFile>'];
+
+$data = parsingFile($firstFilePath);
+print_r($data);

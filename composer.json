@@ -4,10 +4,21 @@
     "bin": [
       "bin/gendiff"
     ],
+    "authors": [
+    {
+      "name": "Ruzil Muftakhov",
+      "email": "MuftakhovRuzil@yandex.ru"
+    }
+    ],
+    "description": "hexlet",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-        }
+        },
+        "files": [
+            "src/parser.php"
+          ]
     },
     "require": {
         "docopt/docopt": "^1.0"
