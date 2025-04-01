@@ -12,6 +12,6 @@ function parsingFile (string $filePath)
     if ($fileContent === false) {
         throw new \Exception("Can't read file: {$filePath}");
     }
-    return json_decode($fileContent, false, 512, JSON_THROW_ON_ERROR);
+    return json_decode($fileContent);
 
 }

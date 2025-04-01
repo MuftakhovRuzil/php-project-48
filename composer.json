@@ -17,7 +17,8 @@
             "Hexlet\\Code\\": "src/"
         },
         "files": [
-            "src/parser.php"
+            "src/parser.php",
+            "src/differ.php"
           ]
     },
     "require": {
