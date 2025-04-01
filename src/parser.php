@@ -2,7 +2,7 @@
 
 namespace GETDIFF\PARSER;
 
-function parsingFile (string $filePath)
+function parsingFile(string $filePath)
 {
     if (!file_exists($filePath)) {
         throw new \Exception("Invalid filepath: {$filePath}");
@@ -13,5 +13,4 @@ function parsingFile (string $filePath)
         throw new \Exception("Can't read file: {$filePath}");
     }
     return json_decode($fileContent);
-
 }
