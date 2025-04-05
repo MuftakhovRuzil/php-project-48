@@ -14,7 +14,9 @@ class GetDiffTest extends TestCase
     public function testGetDiff(): void
     {
         $fromFunction = getDiff(parsingFile("/home/ruzil/php-project-48/files/file1.json"),parsingFile("/home/ruzil/php-project-48/files/file2.json"));
-        $expectedDiff = file_get_contents(__DIR__ . "/tests/fixtures/test1");
+        var_dump($fromFunction);
+        $expectedDiff = file_get_contents(__DIR__."/fixtures/test1");
+        var_dump($expectedDiff);
         $this->assertEquals($expectedDiff, $fromFunction);
 
     }
