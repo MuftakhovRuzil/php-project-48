@@ -1,6 +1,6 @@
 <?php
 
-namespace GETDIFF\PARSER;
+namespace GENDIFF\PARSER;
 
 function parsingFile(string $filePath)
 {
