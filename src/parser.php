@@ -5,7 +5,7 @@ namespace GENDIFF\PARSER;
 function parsingFile(string $filePath)
 {
     if (!file_exists($filePath)) {
-        throw new \Exception("Invalid filepath: {$filePath}");
+        throw new \Exception("Invalid filepathjhgjg: {$filePath}");
     }
     $fileContent = file_get_contents($filePath);
 
