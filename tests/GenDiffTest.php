@@ -13,7 +13,7 @@ class GenDiffTest extends TestCase
     
     public function testGenDiff(): void
     {
-        $fromFunction = genDiff(parsingFile("/home/ruzil/php-project-48/files/file1.json"),parsingFile("/home/ruzil/php-project-48/files/file2.json"));
+        $fromFunction = genDiff(parsingFile(__DIR__."/fixtures/file1.json"),parsingFile(__DIR__."/fixtures/file2.json"));
         var_dump($fromFunction);
         $expectedDiff = file_get_contents(__DIR__."/fixtures/test1");
         var_dump($expectedDiff);
