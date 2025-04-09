@@ -32,7 +32,7 @@ function genDiff($firstFileObject, $secondFileObject)
             "+ $key: " . (is_bool($secondFile[$key]) ? ($secondFile[$key] ? 'true' : 'false') : $secondFile[$key])];
         }
     }, array_keys($repeatingKeys));
-    var_dump($resultCommon);
+    //var_dump($resultCommon);
     // переводим массив для свлучаев - + в строку
     $resultCommon = array_reduce($resultCommon, function ($carry, $item) {
         if (is_array($item)) {
@@ -44,7 +44,7 @@ function genDiff($firstFileObject, $secondFileObject)
 
     // Объединяем все результаты
     $result = array_merge($resultCommon, $resultFirst, $resultSecond);
-    var_dump($result);
+    //var_dump($result);
     // Сортируем
     usort($result, function ($a, $b) {
         $keyA = trim(explode(':', $a)[0], ' -+');

@@ -13,11 +13,18 @@ class GenDiffTest extends TestCase
     
     public function testGenDiff(): void
     {
+        // Тест json файлов
         $fromFunction = genDiff(parsingFile(__DIR__."/fixtures/file1.json"),parsingFile(__DIR__."/fixtures/file2.json"));
-        var_dump($fromFunction);
+        //var_dump($fromFunction);
         $expectedDiff = file_get_contents(__DIR__."/fixtures/test1");
-        var_dump($expectedDiff);
+        //var_dump($expectedDiff);
         $this->assertEquals($expectedDiff, $fromFunction);
-
+        
+        // Тест YML файлов
+        $fromFunction2 = genDiff(parsingFile(__DIR__."/fixtures/file1.yml"),parsingFile(__DIR__."/fixtures/file2.yml"));
+        //var_dump($fromFunction);
+        $expectedDiff2 = file_get_contents(__DIR__."/fixtures/test1");
+        //var_dump($expectedDiff);
+        $this->assertEquals($expectedDiff2, $fromFunction2);
     }
 }
