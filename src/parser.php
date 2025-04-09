@@ -14,17 +14,16 @@ function parsingFile(string $filePath)
     if ($fileContent === false) {
         throw new \Exception("Can't read file: {$filePath}");
     }
-    
-    $pathInfo= pathinfo($filePath);
+
+    $pathInfo = pathinfo($filePath);
     //var_dump ($pathInfo['extension']);
-    
+
     switch ($pathInfo['extension']) {
         case 'json':
             return json_decode($fileContent);
         case 'yaml':
-            return Yaml::parse($fileContent,Yaml::PARSE_OBJECT_FOR_MAP);
+            return Yaml::parse($fileContent, Yaml::PARSE_OBJECT_FOR_MAP);
         case 'yml':
             return Yaml::parse($fileContent, Yaml::PARSE_OBJECT_FOR_MAP);
     }
-    
 }
